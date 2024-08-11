@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "magic:item/lost_fire_sword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "flamed": 1
+      },
+      "model": "magic:item/lost_fire_sword_flamed"
+    }
+  ]
+}

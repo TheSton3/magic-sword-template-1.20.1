@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "magic:item/lost_fire_sword",
+    "layer1": "magic:item/lost_fire_sword_layer"
+  }
+}

@@ -23,6 +23,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FIRE_FAN, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BLOODY_SCYTLE, BIG_HANDHELD);
 
+
     }
     public static final Model BIG_HANDHELD = item("big_handheld", TextureKey.LAYER0);
     private static Model item(String parent, TextureKey... requiredTextureKeys) {
