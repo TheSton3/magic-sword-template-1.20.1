@@ -1,6 +1,5 @@
 package com.thestone.magicsword.item;
 
-import com.thestone.magicsword.MagicSword;
 import com.thestone.magicsword.main.ModParticles;
 import com.thestone.magicsword.util.Helper;
 import net.minecraft.entity.LivingEntity;
@@ -9,7 +8,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;

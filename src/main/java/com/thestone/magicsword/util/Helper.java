@@ -18,12 +18,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.network.packet.s2c.play.EntityStatusEffectS2CPacket;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -33,6 +35,8 @@ import java.util.Map;
 import java.util.Optional;
 
 public class Helper {
+
+
     public static Entity getTargetedEntity(Entity user, int range) {
         Vec3d rayCastOrigin = user.getEyePos();
         Vec3d userView = user.getRotationVec(1.0F).normalize().multiply(range);
@@ -391,7 +395,6 @@ public class Helper {
     }
 
 
-
     public static void damageEntitiesInTrajectory(ServerWorld world, Entity sourceEntity, double distance, float damage, DamageSource damageSource) {
         Vec3d startPos = sourceEntity.getPos().add(0, sourceEntity.getHeight() / 2.0, 0);
         float pitch = sourceEntity.getPitch(1.0F);
@@ -449,12 +452,20 @@ public class Helper {
                     livingTarget.damage(damageSource, damage);
 
                     for (StatusEffectInstance statusEffectInstance : ((LivingEntity) sourceEntity).getStatusEffects()) {
-                      livingTarget.setStatusEffect(statusEffectInstance,null);
+                        livingTarget.setStatusEffect(statusEffectInstance, null);
                     }
 
 
                 }
             }
         }
+    }
+
+    public static void spawnExlosionParticles(ParticleEffect particle, Entity entity, ServerWorld world ) {
+        double d = entity.getX();
+        double e = entity.getY();
+        double j = entity.getZ();
+        world.spawnParticles(particle, d, e, j, 25 + world.random.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
+
     }
 }

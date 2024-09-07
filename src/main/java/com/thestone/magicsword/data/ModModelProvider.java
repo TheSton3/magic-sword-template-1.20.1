@@ -21,12 +21,28 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.FIRE_FAN, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BLOODY_SCYTLE, BIG_HANDHELD);
+        itemModelGenerator.register(ModItems.LEAP_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MIDAS_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ACID_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ZOMBIE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VAMPIRE_RAPIER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.HOOK_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BLOODY_SCYTLE, LONG_HANDHELD);
+        itemModelGenerator.register(ModItems.FROZEN_AXE, BIG_HANDHELD);
+        itemModelGenerator.register(ModItems.ARONDITE, LONG_HANDHELD);
+        itemModelGenerator.register(ModItems.REAPER_SCYTLE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PRISMARINE_DAGGER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ENDSTONE_SWORD, Models.HANDHELD);
+
 
 
     }
-    public static final Model BIG_HANDHELD = item("big_handheld", TextureKey.LAYER0);
-    private static Model item(String parent, TextureKey... requiredTextureKeys) {
+    public static final Model BIG_HANDHELD = item_big("big_handheld", TextureKey.LAYER0);
+    private static Model item_big(String parent, TextureKey... requiredTextureKeys) {
+        return new Model(Optional.of(new Identifier("magic", "item/" + parent)), Optional.empty(), requiredTextureKeys);
+    }
+    public static final Model LONG_HANDHELD = item_big("long_handheld", TextureKey.LAYER0);
+    private static Model item_long(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(new Identifier("magic", "item/" + parent)), Optional.empty(), requiredTextureKeys);
     }
 

@@ -3,9 +3,11 @@ package com.thestone.magicsword.item;
 import com.thestone.magicsword.main.ModParticles;
 import com.thestone.magicsword.util.Helper;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.brain.task.LookTargetUtil;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.server.world.ServerWorld;
@@ -23,13 +25,14 @@ public class BloodyScytle extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+
         return super.postHit(stack, target, attacker);
     }
 
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if(!world.isClient()){
+        if (!world.isClient()) {
             int coolDown = 40;
             float damageModifier = 0.7f;
             DamageSource source = user.getDamageSources().playerAttack(user);

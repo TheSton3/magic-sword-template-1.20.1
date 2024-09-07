@@ -1,5 +1,5 @@
 {
-  "parent": "magic:item/big_handheld",
+  "parent": "magic:item/long_handheld",
   "textures": {
     "layer0": "magic:item/bloody_scytle"
   }
