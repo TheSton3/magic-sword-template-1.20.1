@@ -46,7 +46,7 @@ public class AcidSword extends SwordItem {
         PotionEntity potionEntity = new PotionEntity(user.getWorld(), user);
         potionEntity.setItem(PotionUtil.setPotion(new ItemStack(Items.SPLASH_POTION), potion));
         potionEntity.setPitch(potionEntity.getPitch() - -20.0F);
-        potionEntity.setVelocity(d, e + g * 0.2, f, 0.75F, 8.0F);
+        potionEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 2.5F + (float) 0 * 0.5F, 1.0F);
 
         world.spawnEntity(potionEntity);
 
