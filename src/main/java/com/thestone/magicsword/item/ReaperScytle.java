@@ -18,7 +18,7 @@ public class ReaperScytle extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if(attacker.getRandom().nextFloat() < 0.05F){
+        if(attacker.getRandom().nextFloat() < 0.005F){
             target.kill();
         }
         return super.postHit(stack, target, attacker);

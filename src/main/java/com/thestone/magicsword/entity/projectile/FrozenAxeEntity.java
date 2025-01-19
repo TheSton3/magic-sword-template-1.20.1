@@ -38,7 +38,7 @@ public class FrozenAxeEntity extends PersistentProjectileEntity {
     }
 
     public FrozenAxeEntity(World world, LivingEntity owner, ItemStack stack) {
-       super(ModEntities.FROZEN_AXE_ENTITY, owner, world);
+        super(ModEntities.FROZEN_AXE_ENTITY, owner, world);
         this.itemStack = stack.copy();
         this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
         this.dataTracker.set(ENCHANTED, stack.hasGlint());
@@ -47,7 +47,7 @@ public class FrozenAxeEntity extends PersistentProjectileEntity {
     @Override
     protected void initDataTracker() {
         super.initDataTracker();
-        this.dataTracker.startTracking(LOYALTY, (byte)0);
+        this.dataTracker.startTracking(LOYALTY, (byte) 0);
         this.dataTracker.startTracking(ENCHANTED, false);
     }
 
@@ -115,7 +115,7 @@ public class FrozenAxeEntity extends PersistentProjectileEntity {
         }
 
         Entity entity2 = this.getOwner();
-        DamageSource damageSource = this.getDamageSources().trident(this, (Entity)(entity2 == null ? this : entity2));
+        DamageSource damageSource = this.getDamageSources().trident(this, (Entity) (entity2 == null ? this : entity2));
         this.dealtDamage = true;
         SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_HIT;
         if (entity.damage(damageSource, f)) {
@@ -126,7 +126,7 @@ public class FrozenAxeEntity extends PersistentProjectileEntity {
             if (entity instanceof LivingEntity livingEntity2) {
                 if (entity2 instanceof LivingEntity) {
                     EnchantmentHelper.onUserDamaged(livingEntity2, entity2);
-                    EnchantmentHelper.onTargetDamaged((LivingEntity)entity2, livingEntity2);
+                    EnchantmentHelper.onTargetDamaged((LivingEntity) entity2, livingEntity2);
                 }
 
                 this.onHit(livingEntity2);
@@ -163,7 +163,7 @@ public class FrozenAxeEntity extends PersistentProjectileEntity {
         }
 
         this.dealtDamage = nbt.getBoolean("DealtDamage");
-        this.dataTracker.set(LOYALTY, (byte)EnchantmentHelper.getLoyalty(this.itemStack));
+        this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(this.itemStack));
     }
 
     @Override

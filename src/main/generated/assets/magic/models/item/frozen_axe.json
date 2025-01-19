@@ -1,0 +1,6 @@
+{
+  "parent": "magic:item/big_handheld",
+  "textures": {
+    "layer0": "magic:item/frozen_axe"
+  }
+}

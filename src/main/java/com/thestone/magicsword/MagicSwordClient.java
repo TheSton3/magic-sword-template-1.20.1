@@ -1,12 +1,8 @@
 package com.thestone.magicsword;
 
 import com.thestone.magicsword.client.entity.ModModelLayers;
-import com.thestone.magicsword.client.entity.model.FrozenAxeEntityModel;
-import com.thestone.magicsword.client.entity.model.HookSwordEntityModel;
-import com.thestone.magicsword.client.entity.model.LakeOwnerEntityModel;
-import com.thestone.magicsword.client.entity.render.FrozenAxeEntityRenderer;
-import com.thestone.magicsword.client.entity.render.HookSwordEntityRenderer;
-import com.thestone.magicsword.client.entity.render.LakeOwnerEntityRenderer;
+import com.thestone.magicsword.client.entity.model.*;
+import com.thestone.magicsword.client.entity.render.*;
 import com.thestone.magicsword.main.ModEntities;
 import com.thestone.magicsword.main.ModParticles;
 import com.thestone.magicsword.particle.BloodyPieceParticle;
@@ -30,10 +26,21 @@ public class MagicSwordClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.FROZEN_AXE_ENTITY, FrozenAxeEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.HOOK_SWORD_ENTITY, HookSwordEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.LAKE_OWNER_ENTITY, LakeOwnerEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ACID_SPRAY_ENTITY, AcidSprayEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ICE_ARROW_ENTITY, IceArrowRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ALYE_ENTITY, AlyeEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.WIND_ENTITY, WindEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.LIGHTING_ENTITY, LightingEntityRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.FROZEN_AXE_ENTITY, FrozenAxeEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LAKE_OWNER_ENTITY, LakeOwnerEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOOK_SWORD_ENTITY, HookSwordEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ACID_SPRAY_ENTITY, AcidSprayEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ALYE_ENTITY, AlyeEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.WIND_ENTITY, WindEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LIGHTING_ENTITY, LightingEntityModel::getTexturedModelData);
+
 
         ModModelPredicateProvider.registerModModels();
+
     }
 }

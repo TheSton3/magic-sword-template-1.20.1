@@ -1,0 +1,32 @@
+{
+  //Items
+  "item.magic.lost_fire_sword": "Lost Fire Sword",
+  "item.magic.fire_fan": "Fire Fan",
+  "item.magic.bloody_scytle": "Bloody Scytle",
+  "item.magic.frozen_axe": "Frozen Axe",
+  "item.magic.arondite": "Arondite",
+  "item.magic.leap_sword": "Fire Fan",
+  "item.magic.midas_sword": "Sword of Midas",
+  "item.magic.acid_sword": "Acid Sword",
+  "item.magic.zombie_sword": "Zombie Sword",
+  "item.magic.vampire_rapier": "Vampire Rapier",
+  "item.magic.hook_sword": "Hookslike Sword",
+  "item.magic.reaper_scytle": "Reaper Scytle",
+  "item.magic.prismarine_dagger": "Prismarine Dagger",
+  "item.magic.endstone_sword": "Sword of Endstone",
+  "item.magic.bloody_axe": "Bloody Axe",
+  "item.magic.void_axe": "Void Axe",
+  "item.magic.portal_sword": "PortalLord Sword",
+  "item.magic.lighting": "Lighting ",
+  "item.magic.flame_sword": "Flame Sword",
+  "item.magic.elemental_sword": "Elemental Sword",
+  "item.magic.water_dual_axe": "Water Dual Axe",
+  "item.magic.wind_staff": "Wind Staff",
+  "item.magic.ice_bow": "Ice Bow",
+  "item.magic.excalibur_sword": "Excalibur Sword",
+
+
+  //Tooltip
+  "tooltip.magic.flamed": "Flamed",
+  "tooltip.magic.charged": "Charged"
+}

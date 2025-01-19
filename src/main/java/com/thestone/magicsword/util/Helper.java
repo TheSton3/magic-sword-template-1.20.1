@@ -15,23 +15,19 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.packet.s2c.play.EntityStatusEffectS2CPacket;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.scoreboard.AbstractTeam;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Box;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public class Helper {
@@ -109,7 +105,7 @@ public class Helper {
                 entity.getX() - radius, entity.getY() - (float) radius / 3, entity.getZ() - radius);
     }
 
-    public static Vec3d getPositionLookingAt(PlayerEntity player, int range) {
+    public static Vec3d getPlayerLookingSpot(PlayerEntity player, int range) {
         HitResult result = player.raycast(range, 0, false);
         //System.out.println(result.getType());
         if (!(result.getType() == HitResult.Type.BLOCK)) return null;
@@ -461,11 +457,12 @@ public class Helper {
         }
     }
 
-    public static void spawnExlosionParticles(ParticleEffect particle, Entity entity, ServerWorld world ) {
+    public static void spawnExlosionParticles(ParticleEffect particle, Entity entity, ServerWorld world) {
         double d = entity.getX();
         double e = entity.getY();
         double j = entity.getZ();
-        world.spawnParticles(particle, d, e, j, 25 + world.random.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
+        world.spawnParticles(particle, d, e + 1.5, j, 25 + world.random.nextInt(2), 0.2F, 0.0, 0.3F, 0.1);
 
     }
+
 }

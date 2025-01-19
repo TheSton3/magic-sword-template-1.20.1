@@ -1,7 +1,9 @@
 package com.thestone.magicsword.entity.projectile;
 
+import com.thestone.magicsword.MagicSword;
 import com.thestone.magicsword.item.HookSword;
 import com.thestone.magicsword.main.ModEntities;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -13,8 +15,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.MathHelper;
@@ -24,6 +29,8 @@ import net.minecraft.world.World;
 
 public class HookSwordEntity extends PersistentProjectileEntity {
     private static final TrackedData<Integer> HOOKED_ENTITY_ID = DataTracker.registerData(HookSwordEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    private static final TagKey<Block> UNHOOKABLE = TagKey.of(RegistryKeys.BLOCK, new Identifier(MagicSword.MOD_ID, "unhookable"));
+
     private double maxRange = 0D;
     private double maxSpeed = 0D;
     private boolean isPulling = false;
@@ -58,7 +65,9 @@ public class HookSwordEntity extends PersistentProjectileEntity {
     @Override
     public void tick() {
         super.tick();
-
+        if ((this.inGround && this.inGroundTime != 0 && this.inGroundTime >= 200)) {
+            this.kill();
+        }
         if (getOwner() instanceof PlayerEntity owner) {
             if (isPulling && age % 2 == 0)
                 getWorld().playSound(null, getOwner().getBlockPos(), SoundEvents.ENTITY_ARROW_HIT, SoundCategory.PLAYERS, 1F, 1F);
@@ -107,6 +116,13 @@ public class HookSwordEntity extends PersistentProjectileEntity {
                         if (stack.getMaxDamage() > 0 && age % 20 == 0)
                             stack.damage(1, owner, (entity) -> entity.sendToolBreakStatus(owner.getActiveHand()));
                     }
+                    if (this.getWorld().isClient) {
+                        if (this.inGround) {
+                            if (this.inGroundTime % 20 == 0) {
+                                this.discard();
+                            }
+                        }
+                    }
                 } else {
                     this.kill();
 
@@ -122,6 +138,7 @@ public class HookSwordEntity extends PersistentProjectileEntity {
     public void kill() {
         if (!getWorld().isClient && getOwner() instanceof PlayerEntity owner) {
             owner.setNoGravity(false);
+            // this.discard();
         }
         super.kill();
     }
@@ -133,7 +150,10 @@ public class HookSwordEntity extends PersistentProjectileEntity {
 
     @Override
     protected float getDragInWater() {
-        return 0.99F;
+        if (!getWorld().isClient) {
+            return 0.99F;
+        }
+        return super.getDragInWater();
     }
 
     @Override
@@ -143,7 +163,7 @@ public class HookSwordEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return this.stack.copy();
+        return ItemStack.EMPTY;
     }
 
     @Override
@@ -152,6 +172,12 @@ public class HookSwordEntity extends PersistentProjectileEntity {
         isPulling = true;
         if (!getWorld().isClient && getOwner() instanceof PlayerEntity owner && hookedEntity == null) {
             owner.setNoGravity(true);
+
+        } else {
+            if (!getWorld().getBlockState(blockHitResult.getBlockPos()).isIn(UNHOOKABLE)) {
+                isPulling = false;
+                onRemoved();
+            }
         }
     }
 

@@ -1,0 +1,6 @@
+{
+  "parent": "magic:item/long_handheld",
+  "textures": {
+    "layer0": "magic:item/arondite"
+  }
+}

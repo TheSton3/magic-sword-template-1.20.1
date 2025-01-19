@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "magic:item/ice_bow_pulling_1"
+  }
+}

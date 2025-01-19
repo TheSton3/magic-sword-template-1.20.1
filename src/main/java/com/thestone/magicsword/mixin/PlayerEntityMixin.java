@@ -37,9 +37,14 @@ public abstract class PlayerEntityMixin extends LivingEntity {
     private float getAttackDamage(float baseDamage, Entity target) {
         if (this.getMainHandStack().getItem() == ModItems.ARONDITE) {
             if (target instanceof Monster) {
-                return baseDamage + 10;
+                return baseDamage + 6;
             }
 
+        }
+        if (this.getMainHandStack().getItem() == ModItems.BLOODY_AXE) {
+            if (this.getHealth() <= (this.getMaxHealth() / 2)) {
+                return baseDamage + 4;
+            }
         }
         return baseDamage;
     }

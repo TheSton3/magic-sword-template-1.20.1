@@ -33,6 +33,17 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.REAPER_SCYTLE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PRISMARINE_DAGGER, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ENDSTONE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.BLOODY_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.VOID_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PORTAL_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LIGHTING, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLAME_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.WIND_STAFF, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ELEMENTAL_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.WATER_DUAL_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EXCALIBUR_SWORD, Models.HANDHELD);
+
+
 
 
 

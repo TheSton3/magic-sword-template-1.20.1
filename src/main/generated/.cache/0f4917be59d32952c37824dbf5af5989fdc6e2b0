@@ -1,14 +1,23 @@
-// 1.20.1	2024-09-04T02:34:34.0684194	Magic Sword/Model Definitions
+// 1.20.1	2025-01-19T03:01:20.5664956	Magic Sword/Model Definitions
 55572b8747e14daae527e28ec418534f25f6b2d2 assets\magic\models\item\prismarine_dagger.json
 8522c93e322b16fc90141c82f6c569cd7ed06eff assets\magic\models\item\hook_sword.json
+d9814859fed6e1eee9937bff976338727733ccb6 assets\magic\models\item\flame_sword.json
 3414a9ee02965e5c3549b3481d0711c48dfab40b assets\magic\models\item\arondite.json
 32a6fba2225812ed6100e48bc192ce7dd51f4736 assets\magic\models\item\endstone_sword.json
+9d601d9e37819ac04b37882864168590b5def5ae assets\magic\models\item\elemental_sword.json
 987f0513448076c5eb7562622f5aa4f5a1741fc1 assets\magic\models\item\bloody_scytle.json
+a5b124243e28ad67345fa13a937f489c2c1c899c assets\magic\models\item\lighting.json
 291391b3ded778e703df713f170cf1459d334e95 assets\magic\models\item\frozen_axe.json
 9a53b570d30ae442ce3cda3ff735a97eb2d814be assets\magic\models\item\midas_sword.json
+f212ec1dfc7dae319da1068210cd6d7fe1a78b90 assets\magic\models\item\portal_sword.json
+5bc01f8ebec66ea13dc8763033222872aafc3b6f assets\magic\models\item\bloody_axe.json
+78487d5aa498eed23a94af5dd6a35d458c088716 assets\magic\models\item\water_dual_axe.json
+85ef267b8f3db7f776e8879f7e217f6eb94599d2 assets\magic\models\item\wind_staff.json
 489dc6d3fb7ce187752d6454a86c88623d417805 assets\magic\models\item\vampire_rapier.json
-969977431318b478a823795d5c5af8b4aa41835d assets\magic\models\item\zombie_sword.json
 b2c3a28c8255f719bcc6340d6c9634477e9f5b40 assets\magic\models\item\leap_sword.json
+969977431318b478a823795d5c5af8b4aa41835d assets\magic\models\item\zombie_sword.json
+d86f93852e33805e7999ed380e0c366252b99b0f assets\magic\models\item\excalibur_sword.json
 8fa4888b2d4baae5f23392526015b243d44ea0e8 assets\magic\models\item\fire_fan.json
 bf42fe980a8d170fb92b7b4ec09196e0daf3598f assets\magic\models\item\reaper_scytle.json
+e3cf339c0b083e5cb81232f3be8a86cbca4ce235 assets\magic\models\item\void_axe.json
 c82eac704829d0c80879e23fd97afc6aae391e93 assets\magic\models\item\acid_sword.json

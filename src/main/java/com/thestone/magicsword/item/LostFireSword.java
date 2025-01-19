@@ -38,7 +38,7 @@ public class LostFireSword extends SwordItem {
                 Helper.spawnExlosionParticles(ParticleTypes.LAVA, target, (ServerWorld) world);
             }
         }
-        return true;
+        return super.postHit(stack, target, attacker);
     }
 
     @Override
@@ -71,6 +71,7 @@ public class LostFireSword extends SwordItem {
         super.appendTooltip(stack, world, tooltip, context);
         if (stack.getNbt().getBoolean("Flamed")) {
             tooltip.add(Text.translatable("tooltip.magic.flamed").formatted(Formatting.GOLD));
+
         }
     }
 }
