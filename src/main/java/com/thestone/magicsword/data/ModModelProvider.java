@@ -1,5 +1,6 @@
 package com.thestone.magicsword.data;
 
+import com.thestone.magicsword.main.ModBlocks;
 import com.thestone.magicsword.main.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -15,6 +16,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOODY_BLOCK);
 
     }
 
@@ -42,12 +44,27 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ELEMENTAL_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.WATER_DUAL_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.EXCALIBUR_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.MIDNIGHT_DAGGER, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FIRE_LANTERN, Models.HANDHELD);
+
+
+        //ingredients
+        itemModelGenerator.register(ModItems.BLOOD_PIECE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.IRON_HANDLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOOD_CORE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BLOOD_SCYTLE_EDGE, Models.GENERATED);
 
 
 
 
 
     }
+
+
+
+
+
+
     public static final Model BIG_HANDHELD = item_big("big_handheld", TextureKey.LAYER0);
     private static Model item_big(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(new Identifier("magic", "item/" + parent)), Optional.empty(), requiredTextureKeys);

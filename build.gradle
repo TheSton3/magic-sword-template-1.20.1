@@ -12,8 +12,20 @@ base {
 
 repositories {
 	maven {
+		name = "FzzyMaven"
+		url = "https://maven.fzzyhmstrs.me/"
+	}
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
+	maven {
 		url = "https://jitpack.io"
 	}
+
 }
 
 fabricApi {
@@ -27,9 +39,18 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modApi("com.github.Virtuoel:Pehkui:${pehkui_version}", {
 		exclude group: "net.fabricmc.fabric-api"
+
 	})
+	modImplementation "maven.modrinth:mana-attributes:${project.mana_attributes}"
+	modImplementation "maven.modrinth:resource-bar-api:${project.resource_bar_api_version}"
+	modImplementation"me.fzzyhmstrs:fzzy_config:${project.fzzy_config_version}"
+
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+
+
+
 
 	
 }

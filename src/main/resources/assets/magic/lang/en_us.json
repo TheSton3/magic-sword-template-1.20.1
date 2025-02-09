@@ -28,5 +28,9 @@
 
   //Tooltip
   "tooltip.magic.flamed": "Flamed",
-  "tooltip.magic.charged": "Charged"
+  "tooltip.magic.charged": "Charged",
+
+  //Ingridients
+  "item.magic.blood_piece": "Blood Piece",
+  "item.magic.iron_handle": "Iron Handle"
 }

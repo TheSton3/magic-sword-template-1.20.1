@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " DT",
+        "/ T"
+    ],
+    "key": {
+        "#": {
+            "item": "magic:blood_core"
+        },
+        "D": {
+            "item": "magic:iron_handle"
+        },
+        "T": {
+            "item": "magic:blood_scytle_edge"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "magic:bloody_scytle",
+        "count": 1
+    }
+}

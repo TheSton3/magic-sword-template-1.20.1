@@ -20,7 +20,7 @@ public class MagicSwordClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ParticleFactoryRegistry.getInstance().register(ModParticles.FIRE_BOOM_PARTICLE, FireBoomParticle.Factory::new);
-        ParticleFactoryRegistry.getInstance().register(ModParticles.BLOODY_PIECE, BloodyPieceParticle.Factory::new);
+        ParticleFactoryRegistry.getInstance().register(ModParticles.BLOODY_PARTICLE, BloodyPieceParticle.Factory::new);
         ParticleFactoryRegistry.getInstance().register(ModParticles.BLOODY_SWEEP, BloodySweepParticle.Factory::new);
 
         EntityRendererRegistry.register(ModEntities.FROZEN_AXE_ENTITY, FrozenAxeEntityRenderer::new);
@@ -31,6 +31,7 @@ public class MagicSwordClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.ALYE_ENTITY, AlyeEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.WIND_ENTITY, WindEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.LIGHTING_ENTITY, LightingEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BLOOD_MAGE, BloodMageRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.FROZEN_AXE_ENTITY, FrozenAxeEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LAKE_OWNER_ENTITY, LakeOwnerEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOOK_SWORD_ENTITY, HookSwordEntityModel::getTexturedModelData);
@@ -38,6 +39,7 @@ public class MagicSwordClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ALYE_ENTITY, AlyeEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.WIND_ENTITY, WindEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LIGHTING_ENTITY, LightingEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BLOOD_MAGE_ENTITY, BloodMageModel::getTexturedModelData);
 
 
         ModModelPredicateProvider.registerModModels();

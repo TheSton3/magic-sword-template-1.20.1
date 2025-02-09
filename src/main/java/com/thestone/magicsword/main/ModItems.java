@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
@@ -138,6 +137,21 @@ public class ModItems {
                     3,
                     -2.4F,
                     new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item MIDNIGHT_DAGGER = registerItem("midnight_dagger",
+            new MidnightDagger(ToolMaterials.DIAMOND,
+                    0,
+                    -1.4f,
+                    new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item FIRE_LANTERN = registerItem("fire_lantern",
+            new FireLantern(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1).maxDamage(300)));
+    public static final Item BLOOD_PIECE = registerItem("blood_piece",
+            new Item(new FabricItemSettings()));
+    public static final Item IRON_HANDLE = registerItem("iron_handle",
+            new Item(new FabricItemSettings()));
+    public static final Item BLOOD_CORE = registerItem("blood_core",
+            new Item(new FabricItemSettings()));
+    public static final Item BLOOD_SCYTLE_EDGE = registerItem("blood_scytle_edge",
+            new Item(new FabricItemSettings()));
 
 
     private static void addItemsToCombatItemGroup(FabricItemGroupEntries entries) {
@@ -166,6 +180,18 @@ public class ModItems {
         entries.add(ICE_BOW);
         entries.add(EXCALIBUR_SWORD);
         entries.add(MULTI_BOW);
+        entries.add(MIDNIGHT_DAGGER);
+        entries.add(FIRE_LANTERN);
+
+
+    }
+
+    private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
+        entries.add(BLOOD_PIECE);
+        entries.add(IRON_HANDLE);
+        entries.add(BLOOD_CORE);
+        entries.add(BLOOD_SCYTLE_EDGE);
+
     }
 
     private static Item registerItem(String name, Item item) {
@@ -177,6 +203,7 @@ public class ModItems {
         MagicSword.LOGGER.info("Registering Mod Items for " + MagicSword.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToCombatItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
 
     }
 

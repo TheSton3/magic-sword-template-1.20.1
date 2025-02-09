@@ -2,7 +2,6 @@ package com.thestone.magicsword.effects;
 
 import net.minecraft.entity.DamageUtil;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;

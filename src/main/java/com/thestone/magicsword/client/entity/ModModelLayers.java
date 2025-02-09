@@ -19,5 +19,8 @@ public class ModModelLayers {
             new EntityModelLayer(new Identifier(MagicSword.MOD_ID, "wind_entity"), "main");
     public static final EntityModelLayer LIGHTING_ENTITY =
             new EntityModelLayer(new Identifier(MagicSword.MOD_ID, "lighting_entity"), "main");
+    public static final EntityModelLayer BLOOD_MAGE_ENTITY =
+            new EntityModelLayer(new Identifier(MagicSword.MOD_ID, "blood_mage_entity"), "main");
+
 
 }

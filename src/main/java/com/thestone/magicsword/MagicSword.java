@@ -1,11 +1,11 @@
 package com.thestone.magicsword;
 
 import com.thestone.magicsword.entity.AlyeEntity;
+import com.thestone.magicsword.entity.BloodMageEntity;
 import com.thestone.magicsword.entity.LakeOwnerEntity;
-import com.thestone.magicsword.main.ModEffects;
-import com.thestone.magicsword.main.ModEntities;
-import com.thestone.magicsword.main.ModItems;
-import com.thestone.magicsword.main.ModParticles;
+import com.thestone.magicsword.main.*;
+import com.thestone.magicsword.util.ModLootTableModifiers;
+import com.thestone.magicsword.world.gen.ModEntitySpawns;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -27,9 +27,15 @@ public class MagicSword implements ModInitializer {
         ModEffects.registerEffects();
         ModEffects.registerPierceEffect();
         ModEffects.registerRainingEffects();
+        ModLootTableModifiers.modifyLootTables();
+        ModBlocks.registerModBlocks();
+        ModWorldGeneration.generateModWorldGen();
+        ModEntitySpawns.addSpawn();
 
         FabricDefaultAttributeRegistry.register(ModEntities.LAKE_OWNER_ENTITY, LakeOwnerEntity.createLakeOwnerAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.ALYE_ENTITY, AlyeEntity.createAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.BLOOD_MAGE, BloodMageEntity.createAttributes());
+
         MANA.setTracked(true);
         MANAREGEN.setTracked(true);
         MANACOST.setTracked(true);

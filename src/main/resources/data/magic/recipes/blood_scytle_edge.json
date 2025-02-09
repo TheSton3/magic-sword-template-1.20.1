@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iFF",
+        "FiF",
+        "FFi"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "F": {
+            "item": "magic:blood_piece"
+        }
+    },
+    "result": {
+        "item": "magic:blood_scytle_edge",
+        "count": 1
+    }
+}

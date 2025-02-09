@@ -2,6 +2,7 @@ package com.thestone.magicsword.main;
 
 import com.thestone.magicsword.MagicSword;
 import com.thestone.magicsword.entity.AlyeEntity;
+import com.thestone.magicsword.entity.BloodMageEntity;
 import com.thestone.magicsword.entity.LakeOwnerEntity;
 import com.thestone.magicsword.entity.projectile.*;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -49,10 +50,16 @@ public class ModEntities {
     public static final EntityType<LightingEntity> LIGHTING_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MagicSword.MOD_ID, "lighting_entity"),
             FabricEntityTypeBuilder.<LightingEntity>create(SpawnGroup.MISC, LightingEntity::new)
-                    .dimensions(EntityDimensions.fixed(2f, 2f)).build());
+                    .dimensions(EntityDimensions.fixed(1f, 1f)).build());
     public static final EntityType<IceArrorEntity> ICE_ARROW_ENTITY = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(MagicSword.MOD_ID, "ice_arrow_entity"),
             FabricEntityTypeBuilder.<IceArrorEntity>create(SpawnGroup.MISC, IceArrorEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5F, 0.5F)).trackedUpdateRate(20).build());
+    public static final EntityType<BloodMageEntity> BLOOD_MAGE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(MagicSword.MOD_ID, "blood_mage"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, BloodMageEntity::new)
+                    .dimensions(EntityDimensions.fixed(1f, 2f)).build());
+
+
 
 }

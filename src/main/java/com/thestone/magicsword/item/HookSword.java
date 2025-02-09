@@ -26,9 +26,9 @@ public class HookSword extends SwordItem {
             double maxRange = 24D * 2D;
             double maxSpeed = 10D * 1.5D;
 
-            HookSwordEntity hookshot = new HookSwordEntity(ModEntities.HOOK_SWORD_ENTITY, user, world);
-            hookshot.setProperties(stack, maxRange, maxSpeed, user.getPitch(), user.headYaw, 0f, 1.5f * (float) (maxSpeed / 10));
-            world.spawnEntity(hookshot);
+            HookSwordEntity hookSwordEntity = new HookSwordEntity(ModEntities.HOOK_SWORD_ENTITY, user, world);
+            hookSwordEntity.setProperties(stack, maxRange, maxSpeed, user.getPitch(), user.headYaw, 0f, 1.5f * (float) (maxSpeed / 10));
+            world.spawnEntity(hookSwordEntity);
             user.getItemCooldownManager().set(this, 40);
         }
         world.playSound(user, user.getBlockPos(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1F, 1F);

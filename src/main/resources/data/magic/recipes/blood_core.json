@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#F#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "magic:blood_piece"
+        },
+        "F": {
+            "item": "magic:bloody_block"
+        }
+    },
+    "result": {
+        "item": "magic:blood_core",
+        "count": 1
+    }
+}
